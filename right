@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<div style="width: 100%;height: auto;border: 0px;background-color: #FFFFFF;" >
+
+	<div class="left"  style="border-spacing: 10px;border: 0px;width: 20%;height: auto;float: left;">
+		<?php
+			include("modules/left/danhsach.php");
+		?>
+
+	</div>
+
+	<div class="right" style="border: 0px;width: 80%;height: auto;float: right;">
+	
+	<?php
+				if(isset($_GET['quanly'])&&($_GET['quanly'])!=''){
+					$tam= $_GET['quanly'];
+				}else{
+					$tam ='';
+				}if($tam == 'chitietsp'){
+					include('modules/right/chitietsp.php');
+				}elseif($tam == 'loaisp'){
+					include('modules/right/loaisp.php');
+				}elseif($tam == 'dathang'){
+					include('modules/right/dathang.php');
+				}elseif($tam == 'dangkymoi'){
+					include('modules/right/dangkymoi.php');
+				}elseif($tam == 'dangnhap'){
+					include('modules/right/dangnhap.php');
+				}elseif($tam == 'xulygiohang'){
+					include('modules/right/xulygiohang.php');
+				}elseif($tam == 'camon'){
+					include('modules/right/camon.php');
+				}elseif($tam=='tatcasanpham'){
+					include('modules/right/spmoi1.php');
+				}elseif ($tam=='hieusp') {
+					include('modules/right/hieusp.php');
+				}elseif($tam=='lienhe'){
+					include('modules/right/lienhe.php');
+				}elseif(isset($_POST['search'])){
+						include('modules/right/search.php');
+				}else{
+					include('modules/right/tatcasanpham.php');
+				}
+	?>
+    </div>
+</div>
+</html>
